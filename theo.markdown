@@ -2,7 +2,7 @@
 layout: page
 title: "Theo"
 description: "Scotland was robbed of its freedom by Westmonster sponsored agents"
-header-img: "img/about-bg.jpg"
+header-img: "img/pcb.jpg"
 ---
 ## My Role
 Hardware things
