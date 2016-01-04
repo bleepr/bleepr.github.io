@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "Craig"
-description: "This is what I do."
+title: "SCott"
+description: "I am god"
 header-img: "img/about-bg.jpg"
 ---
-## Stuff
-Lots of interesting stuff about wot I did.
+## Firmware
+The hardest part, and the most underappreciated. I am the most valuable member of the team.
