@@ -2,7 +2,7 @@
 layout: page
 title: "Scott"
 description: "I am god"
-header-img: "img/sweg.gif"
+header-img: "img/post-bg-03.jpg"
 ---
 ## Firmware
 The hardest part, and the most underappreciated. I am the most valuable member of the team.
@@ -15,5 +15,3 @@ The mbed was crap and we didn't like it.
 
 ## Song name
 I'm no stranger to love
-
-###### 23
