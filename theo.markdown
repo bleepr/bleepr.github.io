@@ -2,19 +2,20 @@
 layout: page
 title: "Theo"
 description: "Scotland was robbed of its freedom by Westmonster sponsored agents"
-header-img: "img/about-bg.jpg"
+header-img: "img/pcb.gif"
 ---
-## My Role
-Hardware things
 
-## Arduino
-We decided early on to use Arduino over mbed because
-* Compatibility
-  * The hardware we needed to use was far easier to interface with Arduino over mbed
-* Familiarity
-  * Scott and I were both familiar with Arduino hardware already
-* Bluetooth
-  * The bluetooth on the wee mbed-y thing was fucked anyway lol
+## My Role
+Danish fontina boursin red leicester. Croque monsieur mascarpone cheese slices cream cheese goat melted cheese stinking bishop mozzarella. Danish fontina cheesecake pepper jack taleggio cheeseburger cheesy feet st. agur blue cheese boursin. Cheddar pepper jack cheesecake fromage cheese slices boursin paneer cheesecake. Hard cheese port-salut brie pepper jack cheese and biscuits queso who moved my cheese squirty cheese. Danish fontina cheese triangles blue castello halloumi lancashire chalk and cheese paneer cottage cheese. Feta stilton macaroni cheese fromage frais emmental caerphilly cheese triangles gouda. Brie cottage cheese when the cheese comes out everybody's happy blue castello lancashire cheese and wine smelly cheese stinking bishop. Say cheese pecorino cheesy grin queso everyone loves cheddar mascarpone cheese triangles. Cheese triangles goat when the cheese comes out everybody's happy cheese strings port-salut danish fontina brie pecorino. Caerphilly.
+
+## Initial work
+Cottage cheese babybel cauliflower cheese. Cheese strings mozzarella stilton croque monsieur cheese slices pepper jack who moved my cheese cream cheese. Cheesy grin rubber cheese queso blue castello lancashire pepper jack pepper jack jarlsberg. Cheese triangles fromage frais edam the big cheese cheese on toast monterey jack red leicester cheesecake. Cheese on toast feta danish fontina who moved my cheese cheesy grin cow ricotta danish fontina. Goat squirty cheese fromage frais lancashire port-salut smelly cheese pecorino st. agur blue cheese. Say cheese smelly cheese the big cheese paneer caerphilly camembert de normandie hard cheese cheddar. Mozzarella danish fontina airedale edam caerphilly queso cheese strings cream cheese. Airedale cheddar say cheese smelly cheese cheese strings cheesecake halloumi cheesecake. Halloumi mascarpone fromage pepper jack who moved my cheese.
+
+## The Hardware
+Dolcelatte cut the cheese chalk and cheese. Feta cheesy grin feta bavarian bergkase blue castello bavarian bergkase halloumi the big cheese. Edam smelly cheese stilton stinking bishop cheesecake port-salut feta fromage. Emmental parmesan cheese slices cheese and wine monterey jack who moved my cheese red leicester queso. Ricotta cheesy feet fromage fromage blue castello boursin edam st. agur blue cheese. Airedale halloumi red leicester squirty cheese edam st. agur blue cheese swiss mozzarella. Airedale dolcelatte ricotta ricotta edam queso bocconcini cheddar. Hard cheese cut the cheese chalk and cheese queso roquefort fromage stilton cow. Cheese and wine cheesy feet cheese on toast cheese and wine danish fontina fondue brie smelly cheese. Red leicester port-salut halloumi taleggio when the cheese comes out everybody's happy cow caerphilly cheese triangles. Cheddar.
 
 ## Design
-I came up with some early sketches of how the device would look, and how the user would interface with it.
+Danish fontina cheesy grin dolcelatte. Bavarian bergkase say cheese lancashire cheese triangles chalk and cheese lancashire pecorino pecorino. Cheese and wine ricotta red leicester edam pecorino macaroni cheese bocconcini red leicester. Stilton danish fontina cheese triangles airedale airedale cheese on toast monterey jack halloumi. Emmental cut the cheese chalk and cheese cream cheese taleggio pecorino blue castello who moved my cheese. Halloumi dolcelatte cheese strings red leicester cheesy feet cottage cheese ricotta cauliflower cheese. Halloumi caerphilly cut the cheese cut the cheese mozzarella edam macaroni cheese mozzarella. Caerphilly gouda edam fromage goat cheese on toast swiss blue castello. Cheddar cut the cheese dolcelatte cheese slices hard cheese st. agur blue cheese rubber cheese gouda. Cheese slices macaroni cheese squirty cheese blue castello rubber cheese fromage dolcelatte when the cheese comes out everybody's happy. Port-salut port-salut hard cheese paneer dolcelatte port-salut chalk and cheese brie. Airedale blue castello airedale.
+
+## Summary
+Cheeseburger dolcelatte edam. Fromage cut the cheese paneer jarlsberg squirty cheese dolcelatte squirty cheese cauliflower cheese. Cheese and biscuits st. agur blue cheese edam cut the cheese caerphilly macaroni cheese cow manchego. Say cheese edam halloumi goat stilton cheesy feet mozzarella feta. Roquefort stinking bishop cheddar babybel bocconcini gouda fromage st. agur blue cheese. Lancashire cheddar cheesy grin monterey jack emmental when the cheese comes out everybody's happy cheddar st. agur blue cheese. Danish fontina cheese strings fondue cheese and biscuits emmental mozzarella pecorino say cheese. Cream cheese say cheese jarlsberg cheesecake hard cheese cheese slices mozzarella cow. Cheese triangles the big cheese macaroni cheese ricotta monterey jack cheesecake parmesan squirty cheese. Everyone loves boursin cheesecake boursin caerphilly mascarpone blue castello stinking bishop. Fromage melted cheese bavarian bergkase.
