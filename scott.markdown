@@ -4,14 +4,24 @@ title: "Scott"
 description: "Chief Executive Firmware Engineer/Vice President Communications"
 header-img: "img/post-bg-03.jpg"
 ---
-## Firmware
-The hardest part, and the most underappreciated. I am the most valuable member
-of the team.
 
-It's a draft pls don't judge pls.
+
 
 ## Introduction
+It's a draft pls don't judge pls.
 What makes a **bleepr** a man.
+
+## Requirements
+I'm copying Matthew
+
+## Design and Implementation
+I hate Uni
+
+## Evaluation and Further Improvements
+I hate Uni
+
+## Summary
+I hate Uni
 
 ## Choosing the Arduino over the mbed
 The mbed was crap and we didn't like it.
