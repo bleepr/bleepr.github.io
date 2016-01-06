@@ -37,9 +37,53 @@ Additionally the system needed to display some of the collected information
 about the restaurant, to allow the staff to gain knowledge about long-term
 trends and to get some insights on possible issues in the restaurant.
 
+Modularity, expandability, self-hosting
 
 ## Design
-Process + tech
+Choosing the tools to build a system that would satisfy all the requirements was
+not the easiest task. Craig to build the API using Ruby on Rails, but the
+back-end environment had to be split from the front-end for several reasons, so
+there wasn't any need to have to deal with the Ruby environment. Because of the
+many data science libraries and web tools available to Python, we decided to
+build the entire front-end using tools available in the Python environment. As a
+bonus Cameron decided to build the relay framework with Python as well, which
+meant that we could share code for interfacing with the RESTful API.
+
+After a few design iterations and some refactoring, the system shaped itself
+nicely as shown in the figure below.
+
+DESIGN FIGURE HERE
+
+The front-end was built using a very popular web microframework written in
+Python called Flask. Out of the many frameworks available in the python
+environment Flask was chosen for its bootstrapping capabilities, its simplicity
+and the availability of plugins. We excluded using another popular web
+framework, Django, because of the included Object Relational Mapping (ORM) and
+its general lack of flexibility. Since most of the work was done in a separated
+back-end, using a simple ans small framework was a sound choice.
+
+User management is usually a feature that is very easy to get wrong when
+building a website, so we decided to employ a widely used industry Flask plugin
+called `flask-login` to provide sessions management to the portal.
+
+Python is truly an awesome language for data scientists, as some of the most
+used machine learning and data analysis libraries are available to both Python 2
+and 3. We based the entire data pipeline on `numpy`, the standard numerical
+Python library, and we used the `matplotlib` library to generate all the
+necessary images.
+
+The main page of the portal was designed to show the staff the situation of the
+restaurant at the time of use. To provide a quick reference to the user we
+decided to place a map of the restaurant in the dashboard; this map would then
+show information such as booked and used tables, active Bleeprs and
+other information relevant to the tables. This required to add an interface to
+allow the staff to manage tables and to interactively build the map, and to
+modify the global API to allow the Android app to use the same information if
+needed. To make it easy for the Android app, we also provided an explicit end
+point where to download the map and the full visual status map.
+
+Additionally, all the data is exportable in a neat CSV file that can then be
+imported in spreadsheet tool such as LibreOffice Calc.
 
 ## Evaluation
 How did the system fare? Could had it been better?
@@ -62,6 +106,8 @@ the effort spent in clearly splitting the module, the design ended up being
 clearly modular and usable in professional settings. Because of lack of User
 Experience training, adjustment to the visual interface and a visual re-design
 are still clearly needed, but the project has been definitely satisfactory.
+
+Would have been nice to have a web tool to "draw" the map instead of using text data.
 
 # Bleepr Design
 
