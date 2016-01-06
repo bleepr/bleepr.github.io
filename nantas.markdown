@@ -44,9 +44,24 @@ Process + tech
 ## Evaluation
 How did the system fare? Could had it been better?
 
+In terms of data analysis, it is clear that the system is comprehensive and
+robust in terms of what's visualised, but much of the power of machine learning
+has not been used yet. For instance using only the gradient of the last few data
+points to provide estimates of future values greatly limits the prediction's
+accuracy. A better way to use the data would be to construct a model not only
+based on previous data, but also on environmental data such as weather, city
+events, tourism data and so on.
+
 ## Conclusions
-Front-end was functional, reasonable amount of data output, optimal bleepr
-control.
+
+The web front end was functional and completely up to the requirements by the
+time of the demonstration. The data providers and visualisers gave a reasonable
+idea of both the status of the restaurant and possible data-driven trends, and
+the interface to manage the Bleeprs got actually used to perform the demo. Given
+the effort spent in clearly splitting the module, the design ended up being
+clearly modular and usable in professional settings. Because of lack of User
+Experience training, adjustment to the visual interface and a visual re-design
+are still clearly needed, but the project has been definitely satisfactory.
 
 # Bleepr Design
 
