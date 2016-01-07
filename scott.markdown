@@ -28,6 +28,15 @@ The mbed was crap and we didn't like it.
 
 # Communications
 
+## Interface
+An extremely important part of the **bleepr** is making sure that it is easy to use for
+any visitor to the restaurant. As a result of this we wanted to make sure the
+interface was as clean and simple as possible.
+
+The menu design was first built early on and was kept throughout the project. We
+have a main "idle" screen which is used when there is no customer at the table,
+and an options screen
+
 ## Place in the System
 The **bleepr** has a a self-centered view of the world. It has no knowledge of
 rest of the system including any other **bleepr** device. The only interaction
