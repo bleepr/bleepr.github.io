@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Craig"
-description: "This is what I do."
-header-img: "img/about-bg.jpg"
+description: "Server Backend and Booking Website"
+header-img: "img/craig-1.png"
 ---
 ## Stuff
 Lots of interesting stuff about wot I did.
