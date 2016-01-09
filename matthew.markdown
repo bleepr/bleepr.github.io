@@ -22,6 +22,7 @@ For my part in the project, I was responsible for the implementation of the mobi
 
 ## Requirements
 The minimum viable featureset we decided on for the mobile frontend required that the app be able to:
+
 * Display information on table status
 * Display information on future table occupancy events
 * Display information on open and in-progress orders
