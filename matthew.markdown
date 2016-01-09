@@ -22,10 +22,10 @@ For my part in the project, I was responsible for the implementation of the mobi
 
 ## Requirements
 The minimum viable featureset we decided on for the mobile frontend required that the app be able to:
-    - Display information on table status
-    - Display information on future table occupancy events
-    - Display information on open and in-progress orders
-    - Allow order state to be changed and the change to be reflected in the cloud service
+* Display information on table status
+* Display information on future table occupancy events
+* Display information on open and in-progress orders
+* Allow order state to be changed and the change to be reflected in the cloud service
 
 ## Design and Implementation
 Why it looks like it does and how it does what it does
