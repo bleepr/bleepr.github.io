@@ -23,7 +23,7 @@ firmware.
 For my part in the project, I was responsible for the implementation of the mobile frontend, targetting the Android platform. The source
 code for which can be found at:
 
-https://github.com/bleepr/bleepr-droid
+<https://github.com/bleepr/bleepr-droid>
 
 ## Requirements
 The minimum viable featureset we decided on for the mobile frontend required that the app be able to:
@@ -36,7 +36,7 @@ The minimum viable featureset we decided on for the mobile frontend required tha
 ## Design and Implementation
 To begin with, I sketched a mockup of the various activities the application would consist of, which is shown below in Figure 1:
 
-![Mockup](img/matthew/mockup.png)
+![Mockup](/img/matthew/mockup.png)
 
 *Figure 1: The mockup of application activities*
 
@@ -71,8 +71,8 @@ requests (which meant I did not have to write code to handle request scheduling)
 
 Some screenshots of the application are included below to illustrate the design and state flow:
 
-| ![Login](img/matthew/login.png) | ![Menu](img/matthew/menu.png) | ![Order List](img/matthew/order-list.png) |
-| ![Table List](img/matthew/table-list.png) | ![Table Detail](img/matthew/table-detail.png) | ![Order Detail](img/matthew/order-detail.png)  |
+| ![Login](/img/matthew/login.png) | ![Menu](/img/matthew/menu.png) | ![Order List](/img/matthew/order-list.png) |
+| ![Table List](/img/matthew/table-list.png) | ![Table Detail](/img/matthew/table-detail.png) | ![Order Detail](/img/matthew/order-detail.png)  |
 
 *Figure 2: A selection of screenshots of the various activities in the application*
 
@@ -84,7 +84,7 @@ Additionally, I created a custom list item layout to display table occupancy inf
 of occupancies, rather than having to view a detail activity for each occupancy the user wishes to check. This layout can be seen in the
 screenshot below:
 
-![Table Occupancies](img/matthew/table-occupancies.png)
+![Table Occupancies](/img/matthew/table-occupancies.png)
 
 *Figure 3: A screenshot of the table occupancies activity, with custom list item*
 
