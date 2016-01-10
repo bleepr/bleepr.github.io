@@ -96,5 +96,18 @@ of no future bookings) and if there was a reservation made in advance.
 ## Evaluation and Improvements
 What's good and bad about it and how to make it better
 
+GOOD BITS
+
+Application is designed in such a way further modification should be easy
+GCM notifications are nearly entirely implemented client side
+Meets minimum requirements
+
+IMPROVEMENTS
+
+Add access to more advanced metrics (like earlier heatmaps)
+Refreshes could be handled more intelligently
+Theming could be more consistent
+
+
 ## Summary
 We made an Android app
