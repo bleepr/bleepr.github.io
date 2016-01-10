@@ -34,9 +34,11 @@ The minimum viable featureset we decided on for the mobile frontend required tha
 * **Allow order state to be changed and the change to be reflected in the cloud service**: Necessary for synchronisation between restaurant staff
 
 ## Design and Implementation
-To begin with, I sketched a mockup of the various activities the application would consist of, which is shown below:
+To begin with, I sketched a mockup of the various activities the application would consist of, which is shown below in Figure 1:
 
-MOCKUP GOES HERE
+![Mockup](img/matthew/mockup.png)
+
+*Figure 1: The mockup of application activities*
 
 This diagram shows the intended states of application and how state changes would be initiated by a user. We begin with a login
 activity, which upon successful authentication brings users to a menu where they can select whether they wish to see orders or tables.
@@ -69,9 +71,10 @@ requests (which meant I did not have to write code to handle request scheduling)
 
 Some screenshots of the application are included below to illustrate the design and state flow:
 
-| LOGIN | MENU | OLIST |
-| TLIST | TDET | ODET  |
+| ![Login](img/matthew/login.png) | ![Menu](img/matthew/menu.png) | ![Order List](img/matthew/order-list.png) |
+| ![Table List](img/matthew/table-list.png) | ![Table Detail](img/matthew/table-detail.png) | ![Order Detail](img/matthew/order-detail.png)  |
 
+*Figure 2: A selection of screenshots of the various activities in the application*
 
 As we have no multi-tenancy system in place for user accounts in this prototype version, the login screen takes dummy information. In the
 event we were to implement one, handling logins would likely be handled via a seperate background service in a manner similar to the API requests,
@@ -82,6 +85,8 @@ of occupancies, rather than having to view a detail activity for each occupancy 
 screenshot below:
 
 ![Table Occupancies](img/matthew/table-occupancies.png)
+
+*Figure 3: A screenshot of the table occupancies activity, with custom list item*
 
 This shows staff who is occupying the table over a given timespan, the timespan they are occupying it for (potentially indefinite in the event
 of no future bookings) and if there was a reservation made in advance.
