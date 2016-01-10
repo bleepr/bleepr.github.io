@@ -20,7 +20,10 @@ as well as a table booking application. The relay section consists of the hardwa
 the cloud service and the Bleepr hardware. Finally, the hardware section consists of the design and implementation of the Bleepr hardware and
 firmware.
 
-For my part in the project, I was responsible for the implementation of the mobile frontend, targetting the Android platform.
+For my part in the project, I was responsible for the implementation of the mobile frontend, targetting the Android platform. The source
+code for which can be found at:
+
+https://github.com/bleepr/bleepr-droid
 
 ## Requirements
 The minimum viable featureset we decided on for the mobile frontend required that the app be able to:
@@ -66,19 +69,9 @@ requests (which meant I did not have to write code to handle request scheduling)
 
 Some screenshots of the application are included below to illustrate the design and state flow:
 
-SCREENSHOT OF LOGIN
+| LOGIN | MENU | OLIST |
+| TLIST | TDET | ODET  |
 
-SCREENSHOT OF MENU
-
-SCREENSHOT OF ORDER LIST
-
-SCREENSHOT OF ORDER DETAIL
-
-SCREENSHOT OF TABLE LIST
-
-SCREENSHOT OF TABLE DETAIL
-
-MAKE THESE INTO A 2X3 GRID PROBABLY
 
 As we have no multi-tenancy system in place for user accounts in this prototype version, the login screen takes dummy information. In the
 event we were to implement one, handling logins would likely be handled via a seperate background service in a manner similar to the API requests,
@@ -88,26 +81,17 @@ Additionally, I created a custom list item layout to display table occupancy inf
 of occupancies, rather than having to view a detail activity for each occupancy the user wishes to check. This layout can be seen in the
 screenshot below:
 
-SCREENSHOT OF TABLE OCCUPANCIES
+![Table Occupancies](img/matthew/table-occupancies.png)
 
 This shows staff who is occupying the table over a given timespan, the timespan they are occupying it for (potentially indefinite in the event
 of no future bookings) and if there was a reservation made in advance.
 
-## Evaluation and Improvements
-What's good and bad about it and how to make it better
+## Evaluation, Improvements and Summary
+The application is internally architected in terms of activities and services, each with a clear purpose. This was intentional (and is in some
+ways enforced upon you by the Android libraries), in order to make future extensions and maintenance easy to achieve. It has been tested
+and works without crashes on my Nexus 5 phone running Android 6, and meets the minimum requirements stated above.
 
-GOOD BITS
+However, with more time it would be nice to add access to more advanced kinds of metrics (such as the previously mentioned heatmaps), as well
+as handling refreshes in a more intelligent manner to save network bandwidth and cache space, and the theming could be slightly more conistent.
 
-Application is designed in such a way further modification should be easy
-GCM notifications are nearly entirely implemented client side
-Meets minimum requirements
-
-IMPROVEMENTS
-
-Add access to more advanced metrics (like earlier heatmaps)
-Refreshes could be handled more intelligently
-Theming could be more consistent
-
-
-## Summary
-We made an Android app
+Additionally, the GCM notification code is mostly in-place on client side, but if we had more time it would be nice to make it work end-to-end.
