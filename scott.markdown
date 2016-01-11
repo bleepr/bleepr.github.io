@@ -24,7 +24,16 @@ I hate Uni
 I hate Uni
 
 ## Choosing the Arduino over the mbed
-The mbed was crap and we didn't like it.
+While we originally started work using the mbed, we realised
+quickly in development that it was not the ideal device for
+our purpose. Using an arduino instead had a couple of
+advantages for us:
+
+* Libraries supported for all connected devices
+* Familiarity with the system/Ease of use
+
+This meant we could focus our time on building the best
+bleepr possible, 
 
 # Communications
 
