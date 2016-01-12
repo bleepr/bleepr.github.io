@@ -7,16 +7,32 @@ header-img: "img/post-bg-03.jpg"
 
 
 
-## Introduction
-It's a draft pls don't judge pls.
-What makes a **bleepr** a man.
+# Introduction
+The bleepr device is built of an Arduino microcontroller,
+connected sensors and a display. It was absolutely critical to
+ensure all these components worked together to give us the smart
+restaurant solution we needed.
 
-## Requirements
-I'm copying Matthew
+The hardware and firmware on the bleepr go hand in hand, and
+naturally anyone working on the actual device will have had a
+part in both, but I have focused on the firmware of the device,
+and bringing each of our components together into a fantastic
+culinary experience.
+
+# Requirements
+From the start we knew there were a few major keys for success:
+
+* **Communication to the Pi:** The bleepr should be able to send
+data back to the rest of the system.
+* **Clear interface for the user:** The bleepr should be able to
+be able to used by anyone if it wants to continue the journey to
+more success
+* **Customisability:** The bleepr will need to be customisable
+in terms of colour schemes (and bleeps!) if we want different
+restaurants to use it.
 
 ## Design and Implementation
 I hate Uni
-
 ## Evaluation and Further Improvements
 I hate Uni
 
@@ -32,8 +48,8 @@ advantages for us:
 * Libraries supported for all connected devices
 * Familiarity with the system/Ease of use
 
-This meant we could focus our time on building the best
-bleepr possible, 
+This meant we could focus our time on building the bleepr
+functionality, rather than porting libraries.
 
 # Communications
 
@@ -83,4 +99,4 @@ scheme.
 
 Further work could make these profiles give a fully customisable setup of colour
 schemes and bleeps which would be automatically transmitted to any **bleepr**
-addded to the system.
+added to the system.
