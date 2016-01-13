@@ -34,7 +34,10 @@ The minimum viable featureset we decided on for the mobile frontend required tha
 * **Allow order state to be changed and the change to be reflected in the cloud service**: Necessary for synchronisation between restaurant staff
 
 ## Design and Implementation
-To begin with, I sketched a mockup of the various activities the application would consist of, which is shown below in Figure 1:
+To begin with, I sketched a mockup of the various activities the application would need to consist of to meet these requirements. As
+we have no need to show the full extent of restaurant metrics to the service staff, and as we'd like to create an application which is
+simple to use and impedes the activities of service staff in a minimal way, it was decided very early on that we should omit the ability
+to view most of the metrics the system would be capable of generating. The resultant mockup can be seen below, in Figure 1:
 
 ![Mockup](/img/matthew/mockup.png)
 
@@ -52,7 +55,7 @@ activities, and link them together to create the desired user flow. As I chose t
 the recommended Material Design visual language and attempted to theme the application as such (though some areas have been left unthemed
 due to a desire to implement missing functionality over missing design for the sake of time).
 
-Internally, I architected the application such that it was split into clean, modular components:
+Conceptually, the resultant application was to be quite simple, but I architected the application as such:
 
 * A Frontend (UI code)
 * A ContentManager (which maintains a local cache of requested API data in an SQLite database)
@@ -61,13 +64,23 @@ Internally, I architected the application such that it was split into clean, mod
 
 Roughly, the flow of control through the application is such that the user performs an action (i.e. view the table list, or an order) and
 the ContentManager is called upon to retrieve data relating to the user's request. At certain points during the application's execution,
-we send a refresh event to the API background service to refresh the data managed by the ContentManager. This service is also used to push
-new data to the API when the user makes a change. In parallel, the GCM service awaits new messages from Google Cloud Messaging, but we
-did not have time to fully implement this, so no messages are ever sent to the application, and thus no notifications can be generated.
+we send a refresh event to the API background service to refresh the data managed by the ContentManager. This service then calls upon
+Google's Volley library to perform network requests - this was chosen over the standard library network classes as it provides a cleaner
+method of handling JSON data, and automatically handles network request scheduling. We invoke a GET request to an API endpoint, recieve
+a JSON blob, and the library will decode this for us into a useful data structure, and pass it to a "request successful" event handler.
 
-For networking, I opted to use Google's Volley library over the standard library network classes as it provides a clean method of handling
-JSON data (which improved productivity when testing it's ability to connect to our API), and automatically handles the scheduling of network
-requests (which meant I did not have to write code to handle request scheduling).
+Depending on the nature of the request, the event handler used will extract the relevant information from the JSON blob, insert this into
+the ContentManager, and dispatch new network requests to collect more data if necessary.
+
+This service is also used to push new data to the API when the user makes a change, this is handled similarly to the GET request case, but
+we use a POST request instead, supplying a JSON blob that we wish to send to the API. In parallel, the GCM service awaits new messages from 
+Google Cloud Messaging, but we did not have time to fully implement this, so no messages are ever sent to the application, and thus no
+notifications can be generated natively within the application (we use Pushbullet to simulate this behaviour presently).
+
+My reasoning for this architecture is in part to ensure that the code is modular, maintainable and easily extenable (good properties for later
+reuse), but is done mostly to ensure a good user experience - it would be possible to handle all of this in a single component, from a 
+technical standpoint, but the way Android works means that all UI code must be on a single thread, and if we block that thread with network
+requests or database queries, then the application will appear unresponsive to the user.
 
 Some screenshots of the application are included below to illustrate the design and state flow:
 
@@ -89,7 +102,10 @@ screenshot below:
 *Figure 3: A screenshot of the table occupancies activity, with custom list item*
 
 This shows staff who is occupying the table over a given timespan, the timespan they are occupying it for (potentially indefinite in the event
-of no future bookings) and if there was a reservation made in advance.
+of no future bookings) and if there was a reservation made in advance. This was achieved by creating a custom XML layout to achieve the look
+I wanted for the occupancies items, and then backing that with a custom ListAdapter, which handles populating all of the fields of that layout
+(and colouring the text and background appropriately) based on data retrieved from the cache. The JodaTime library proved useful here for
+managing date-time values, and constructing well formatted human readable versions of them.
 
 ## Evaluation, Improvements and Summary
 The application is internally architected in terms of activities and services, each with a clear purpose. This was intentional (and is in some
@@ -98,5 +114,13 @@ and works without crashes on my Nexus 5 phone running Android 6, and meets the m
 
 However, with more time it would be nice to add access to more advanced kinds of metrics (such as the previously mentioned heatmaps), as well
 as handling refreshes in a more intelligent manner to save network bandwidth and cache space, and the theming could be slightly more conistent.
+Furthermore, a useful feature would be the ability to assign customers RFID cards from within the app, allowing service staff to perform this
+common task at the door or table.
 
 Additionally, the GCM notification code is mostly in-place on client side, but if we had more time it would be nice to make it work end-to-end.
+
+## References
+
+* Android API Guide: <http://developer.android.com/guide/index.html>
+* Volley library documentation: <http://developer.android.com/training/volley/index.html>
+* JodaTime documentation: <http://www.joda.org/joda-time/>
