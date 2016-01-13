@@ -31,13 +31,7 @@ more success
 in terms of colour schemes (and bleeps!) if we want different
 restaurants to use it.
 
-## Design and Implementation
-I hate Uni
-## Evaluation and Further Improvements
-I hate Uni
-
-## Summary
-I hate Uni
+# Design and Implementation
 
 ## Choosing the Arduino over the mbed
 While we originally started work using the mbed, we realised
@@ -51,8 +45,6 @@ advantages for us:
 This meant we could focus our time on building the bleepr
 functionality, rather than porting libraries.
 
-# Communications
-
 ## Interface
 An extremely important part of the **bleepr** is making sure that it is easy to use for
 any visitor to the restaurant. As a result of this we wanted to make sure the
@@ -61,14 +53,6 @@ interface was as clean and simple as possible.
 The menu design was first built early on and was kept throughout the project. We
 have a main "idle" screen which is used when there is no customer at the table,
 and an options screen
-
-## Place in the System
-The **bleepr** has a a self-centered view of the world. It has no knowledge of
-rest of the system including any other **bleepr** device. The only interaction
-the **bleepr** has is sensing a user's input, and sending out commands via BLE.
-A **bleepr** does not need any input to be paired, as this is done automatically
-by the relay. We decided to use this method as it allowed the **bleepr** system
-to be modular and easily expandable.
 
 ## Bluetooth to Pi
 The Bluetooth Low Energy (BLE) communication between the **bleepr** and the **Pi
@@ -85,7 +69,14 @@ data that has been sent back. After a certain amount of time with no response,
 the **bleepr** can display an "action failed" notice and continue back to whatever
 state it was in before.
 
-# Future Developments
+## Place in the System
+The **bleepr** has a a self-centered view of the world. It has no knowledge of
+rest of the system including any other **bleepr** device. The only interaction
+the **bleepr** has is sensing a user's input, and sending out commands via BLE.
+A **bleepr** does not need any input to be paired, as this is done automatically
+by the relay. We decided to use this method as it allowed the **bleepr** system
+to be modular and easily expandable.
+
 
 ## Song name
 
@@ -100,3 +91,11 @@ scheme.
 Further work could make these profiles give a fully customisable setup of colour
 schemes and bleeps which would be automatically transmitted to any **bleepr**
 added to the system.
+
+
+
+## Evaluation and Further Improvements
+I hate Uni
+
+## Summary
+I hate Uni
