@@ -40,3 +40,33 @@ At this prototyping stage of the project it was decided that authentication and 
 There are many Web Frameworks to choose from, so in this project it was decided that the Ruby on Rails framework had features that might be found useful. Of particular interest was the ease of implementing RESTful services, and the newly released realtime sockets library.
 
 Usefully for the timeframe of the project, Rails prefers convention over configuration so for the most part we were able to utilise the default behaviour and avoid a significant volume of boilerplate that might be required in less fully featured frameworks.
+
+# Implementation
+
+## Models
+
+In the case of this project there are a number of associated data models to support the varying use cases.
+
+![Entity Relation Diagram](../img/erd.png)
+
+These are implemented using standard ActiveRecord models attached to our MySQL database, with appropriate indexes, primary keys and foreign keys to speed up querying.
+
+Some data operations performed by the clients may not make sense from a real world perspective, for example having simultaneous bookings on one table. These constraints are enforced using ActiveRecord validations on the models, such as this one for the aforementioned condition:
+
+    def only_one_occupied_occupancy_per_table
+      if occupied && table.occupancies.where(occupied: true).count > 0
+        errors.add(:occupied, "table is already occupied")
+      end
+    end
+
+The English like syntax makes it easy to specify new validations, and the way errors are specified as being errors with a particular attribute allows the client to indicate to the end user where the problem is and how to resolve it.
+
+Modifications to the models are possible by using the database migration facility built into Rails, so the database can be nondestructively restructured to incorporate future work while continuing to utilise the existing code.
+
+## Controllers
+
+In Rails parlance, these are the actions exposed to the clients over HTTP. For the most part these take the "CRUD" pattern that REST enforces; with actions for creating, reading, updating and deleting data entities. However in order to ease the interaction with the relay client, a few actions were implemented to carry out common actions such as assigning an order to a table or getting a list of tables that are occupied.
+
+## Views
+
+The clients were to receive responses in JSON format, 
