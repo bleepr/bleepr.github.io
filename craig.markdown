@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Craig"
-description: "Server Backend and Booking Website"
+description: "VP Data Warehousing"
 header-img: "img/craig-1.png"
 ---
 
@@ -41,6 +41,8 @@ There are many Web Frameworks to choose from, so in this project it was decided 
 
 Usefully for the timeframe of the project, Rails prefers convention over configuration so for the most part we were able to utilise the default behaviour and avoid a significant volume of boilerplate that might be required in less fully featured frameworks.
 
+<hr>
+
 # Implementation
 
 ## Models
@@ -69,4 +71,37 @@ In Rails parlance, these are the actions exposed to the clients over HTTP. For t
 
 ## Views
 
-The clients were to receive responses in JSON format, as parsing libraries are ubiquitous across all platforms without the additional overhead of XML, for example. 
+The clients were to receive responses in JSON format, as parsing libraries are ubiquitous across all platforms without the additional overhead of XML, for example. In order to incorporate data from associated models into responses, the JBuilder domain specific language for JSON was used in actions on customer entities. This provides a lightweight syntax to customise JSON responses, as follows:
+
+    json.(@customer, :id, :first_name, :last_name, :email, :phone, :created_at, :updated_at)
+    json.cards @customer.cards, :id
+
+Creates JSON:
+
+    {
+      "id": 2,
+      "first_name": "Cammy",
+      "last_name": "Gray",
+      "email": "craig@craigsnowden.com",
+      "phone": "07540635316",
+      "created_at": "2015-10-14T05:35:43.994Z",
+      "updated_at": "2015-10-22T15:48:03.674Z",
+      "cards": [
+        {
+          "id": "1217709"
+        },
+        {
+          "id": "134 177 103 143 223"
+        }
+      ]
+    }
+
+## Channels
+
+In order to provide real time updates to clients, we use a new feature for Rails called ActionCable. Due to not having been released at the time of the project a prerelease version of the project was used, which introduced problems relating to this.
+
+
+
+<hr>
+
+# Evaluation
