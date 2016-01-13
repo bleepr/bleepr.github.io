@@ -69,4 +69,4 @@ In Rails parlance, these are the actions exposed to the clients over HTTP. For t
 
 ## Views
 
-The clients were to receive responses in JSON format, 
+The clients were to receive responses in JSON format, as parsing libraries are ubiquitous across all platforms without the additional overhead of XML, for example. 
