@@ -16,7 +16,7 @@ restaurant solution we needed.
 The hardware and firmware on the bleepr go hand in hand, and
 naturally anyone working on the actual device will have had a
 part in both, but I have focused on the firmware of the device,
-and bringing each of our components together into a fantastic
+and bringing each of our components together into a revolutionary
 culinary experience.
 
 # Requirements
