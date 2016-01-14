@@ -60,19 +60,36 @@ library to allow me to specify the "LE Address Type" argument as the default of
 "public" is incompatible with the hardware we are using.
 
 The software is entirely asynchronous - It uses GATT Notifications so that when
-a Bleepr device sends a message, a callback is called on the relay.  The relay
+a Bleepr device sends a message, a callback is called on the relay.  This is
+significantly more efficient than the original design where the relay would
+cycle through all devices it is serving and read values from them, using the
+GATT Notifications drastically improves the latency over this design.  The relay
 also uses Redis's publish/subscribe structure to call a callback when a certain
 Redis key is modified.  This means that there are virtually no delays between a
 message being sent to the relay and it being handled and forwarded on.
 
+The original design involved the relay connecting to each Bleepr device in turn
+and servicing it before moving onto the next one, this however turned out to
+cause severe performance issues as connecting to a device can take up to 1
+second to complete. It was later discovered that the bluetooth hardware is
+capable of connecting to multiple devices at once meaning we could eliminate
+this issue.
 The relay spawns a separate process for each Bleepr device that it is servicing,
 this means that it can handle multiple devices at once without having to switch
-between devices.  This vastly improves performance as it means that the relay
-can maintain a bluetooth connection to all of the devices at once which saves on
-the rather large overhead of connecting to each device in turn which can take
-up to 1 second to complete.
+between devices.
+
+The original design involved scanning for nearby Bleepr devices continuously
+and connecting to them automatically however we found that due to a limitation
+with the Bluetooth hardware we are unable to scan while remaining connected
+to devices.  Therefore we implemented a system where periodically the relay
+would disconnect, rescan for devices and then reconnect, a processs that only
+took a couple of seconds.  However, this was found to behave poorly with
+the asynchronous nature of the GATT notifications, therefore this functionality
+was removed so the relays now need to be manually instructed to scan for
+devices.
 
 ## Improvements
+
 ### Ability to scan for and serve devices at the same time
 In order to scan for new bluetooth devices the relay's bluetooth adapter needs
 to switch mode, this means that it will drop all connections to current devices.
