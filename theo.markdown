@@ -1,12 +1,12 @@
 ---
 layout: page
 title: "Theo"
-description: "I did the hardware-y things"
+description: "Hardware Engineering"
 header-img: "img/pcb.gif"
 ---
 
 ## My Role
-My role in the team was to determine the appropriate hardware to use for our device, come up with a design for the device, build breadboard prototypes at various stages of the course, and to construct the final device using a custom PCB and 3D printed case.
+My role in the team was to determine the appropriate hardware to use for our device, come up with a design for the device, build breadboard prototypes at various stages of the course, and to construct the final device using a custom PCB and 3D printed case. The hardware role naturally involved working very closely with our firmware engineer, Scott. Some of our work overlapped, but I will focus mainly on the hardware tasks that I completed to avoid duplication in our reports.
 
 ## Initial Work
 During the development of our project plan, I was involved in trying to interface the mbed development board (Nordic Semiconductor NRF51-DK) with the hardware components which we wanted to use. We were able to demonstrate communication with the board from our server, and to the server from the board. This used a "relay", which was created using a Raspberry Pi 2, to connect the board to the server. The board connected to the relay with bluetooth, and the relay then connected to the server over its internet connection.
@@ -41,6 +41,8 @@ The buttons used on the Bleepr were chosen as we needed push buttons rather than
 A speaker and RGB LED strip were also used in the device. These allowed extra notifications to be given to the user.
 
 [pictures of speaker and LEDs]
+
+To power the device we used a standard rechargeable micro-USB battery pack. This allowed a considerably higher capacity than the other batteries available to us at a very good value. It also gave the advantage of being able to recharge the battery without removing it from the device. In our prototype, the USB charging cable can be pulled out of the base of the device, but a production model would be able to easily incorporate a charging port or even wireless charging capability using a standard such as Qi, which we planned to implement in the final model. This would be quite a trivial feature to implement, but would improve the usability of the device as a compatible wireless charger could be installed on the restaurant tables to keep the device charged while in use, removing the possibility that the battery could run out while in use.
 
 ## Design
 We decided to arrange the interface with the buttons around the screen, in a similar fashion to an ATM, as shown in the figure below. This allowed buttons to be used as soft keys, not fixed to a single function but changing based on what is being showed on the screen.
