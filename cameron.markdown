@@ -2,7 +2,7 @@
 layout: page
 title: "Cameron"
 description: "Relay"
-header-img: "img/about-bg.jpg"
+header-img: "img/cameron/relay-outer-1900.jpg"
 ---
 # Bleepr Relay
 The relay is a network device that acts as a bridge between the Bleepr
@@ -12,6 +12,8 @@ Bluetooth 4.0 Low Energy.  Messages can then be forwarded from the devices
 to the network and from the network to devices.
 
 ## Hardware
+![Inside of Relay showing Rasberry Pi and USB adapter](img/cameron/relay-usb-640.jpg)
+
 The Bleepr relay is based around a Rasperry Pi 2 in a custom 3D printed
 case.  This has a 900MHz Quad Core ARM Cortex-A7 CPU with 1gb of RAM and is
 equipped with a MicroSD card which holds the software as well as
@@ -26,6 +28,8 @@ The hardware can be powered from a single micro USB connection so it can be
 powered from a common USB wall adapter or any other 5v power source.
 
 ## Software
+![Software architecture diagram](img/cameron/diagram-lines-640.png)
+
 The relay runs on Linux, a special cut down distribution called DietPi is
 used which comes with the bare minimum packages installed to prevent the relay
 wasting system resources running services that are never used.
