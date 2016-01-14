@@ -1,6 +1,7 @@
 ---
 layout: page
 description: "An Internet-enabled Restaurant Management System"
+header-img: "img/theo/rgbled.jpg"
 ---
 
 # The System
