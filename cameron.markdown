@@ -33,7 +33,12 @@ powered from a common USB wall adapter or any other 5v power source.
 
 The relay runs on Linux, a special cut down distribution called DietPi is
 used which comes with the bare minimum packages installed to prevent the relay
-wasting system resources running services that are never used.
+wasting system resources running services that are never used.  This also
+improves security as there is a limited number of services that could be
+potentially attacked.  FreeBSD was
+tested initially due to it's simplicity for applications such as this however
+we experienced some major issues with compatibility between it and the Bluetooth
+adapter.
 
 Supervisord is used to manage all the processes running on the device - It
 starts them automatically on boot and handles restarting processes if any fail.
