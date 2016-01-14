@@ -35,7 +35,7 @@ Unfortunately HTTP is less useful for server initiated communication, so in orde
 # Design Decisions
 As the project was going to need both stateless and realtime communication, we needed to use both of the above. The server was going to need to store information relevant to the Bleepr and its state persistently, and relay updates of this information to relevant parties.
 
-At this prototyping stage of the project it was decided that authentication and authorisation was going to be an unnecessary complication, and therefore was excluded. In the future, key based authentication could be used to secure the communication with the restaurant based device, with communication to human clients authenticated with a Single Sign On standard such as OAuth 2.
+At this prototyping stage of the project it was decided that authentication and authorisation was going to be an unnecessary complication, and therefore was excluded. In the future, key based authentication could be used to secure the communication with the restaurant based device, with communication to human clients authenticated with a Single Sign On standard such as [OAuth 2](http://oauth.net/2/).
 
 ## Choosing a Web Framework
 There are many Web Frameworks to choose from, so in this project it was decided that the Ruby on Rails framework had features that might be found useful. Of particular interest was the ease of implementing RESTful services, and the newly released realtime sockets library.
@@ -52,7 +52,7 @@ In the case of this project there are a number of associated data models to supp
 
 ![Entity Relation Diagram](../img/erd.png)
 
-These are implemented using standard ActiveRecord models attached to our MySQL database, with appropriate indexes, primary keys and foreign keys to speed up querying.
+These are implemented using standard [ActiveRecord](https://github.com/rails/rails/tree/master/activerecord) models attached to our MySQL database, with appropriate indexes, primary keys and foreign keys to speed up querying.
 
 Some data operations performed by the clients may not make sense from a real world perspective, for example having simultaneous bookings on one table. These constraints are enforced using ActiveRecord validations on the models, such as this one for the aforementioned condition:
 
@@ -68,11 +68,11 @@ Modifications to the models are possible by using the database migration facilit
 
 ## Controllers
 
-In Rails parlance, these are the actions exposed to the clients over HTTP. For the most part these take the "CRUD" pattern that REST enforces; with actions for creating, reading, updating and deleting data entities. However in order to ease the interaction with the relay client, a few actions were implemented to carry out common actions such as assigning an order to a table or getting a list of tables that are occupied.
+In Rails parlance, these are the actions exposed to the clients over <abbr title="HyperText Transfer Protocol">HTTP</abbr>. For the most part these take the <abbr title="Create Read Update Delete">"CRUD"</abbr> pattern that <abbr title="REpresentational State Transfer">REST</abbr> enforces; with actions for creating, reading, updating and deleting data entities. However in order to ease the interaction with the relay client, a few actions were implemented to carry out common actions such as assigning an order to a table or getting a list of tables that are occupied.
 
 ## Views
 
-The clients were to receive responses in JSON format, as parsing libraries are ubiquitous across all platforms without the additional overhead of XML, for example. In order to incorporate data from associated models into responses, the JBuilder domain specific language for JSON was used in actions on customer entities. This provides a lightweight syntax to customise JSON responses, as follows:
+The clients were to receive responses in <abbr title="JavaScript Object Notation">JSON</abbr> format, as parsing libraries are ubiquitous across all platforms without the additional overhead of XML, for example. In order to incorporate data from associated models into responses, the [JBuilder](https://github.com/rails/jbuilder) domain specific language for JSON was used in actions on customer entities. This provides a lightweight syntax to customise JSON responses, as follows:
 
     json.(@customer, :id, :first_name, :last_name, :email, :phone, :created_at, :updated_at)
     json.cards @customer.cards, :id
@@ -99,9 +99,9 @@ Creates JSON:
 
 ## Channels
 
-In order to provide real time updates to clients, we use a new feature for Rails called ActionCable. Due to not having been released at the time of the project a prerelease version of the project was used, which introduced problems relating to this.
+In order to provide real time updates to clients, we use a new feature for Rails called [ActionCable](https://github.com/rails/actioncable). Due to not having been released at the time of the project a prerelease version of the project was used, which introduced problems relating to this.
 
-
+At the time of the project messages containing arrays or sub-objects would be string escaped inside another JSON object; meaning that the client would have to parse the wrapper object, unescape the wrapped object and parse that. Unfortunately no one appears to have taken notice of this issue, which was [reported on the Rails project](https://github.com/rails/rails/issues/22675).
 
 <hr>
 
