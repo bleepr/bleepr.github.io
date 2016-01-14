@@ -5,6 +5,7 @@ description: "VP Data Warehousing"
 header-img: "img/craig-1.png"
 ---
 
+My role in the project was providing the API web service to facilitate the storage and management of data for the project.
 
 
 # How do you build a Web Service?
@@ -105,3 +106,14 @@ In order to provide real time updates to clients, we use a new feature for Rails
 <hr>
 
 # Evaluation
+
+This project was not without its challenges, however the design decisions have stood up to the implementation requirements.
+As the project utilised the Model View Controller pattern (as laid out above), future enhancements can be made with ease to accommodate changing hardware requirements. As a number of external libraries have been used, the project can benefit from the continuing development of these and gain additional features either for "free" or for little time investment.
+
+Over the project period 10,000 requests were served, only using 34 MiB bandwidth. This would suggest that in a real life application of the project, the service would not have a noticeable impact on the other internet operations of a food service operation, and could indeed operate over a cellular link using a 4G dongle installed in the relay device.
+
+## Future Work
+
+As ActionCable is still early in its life, developments to this should be followed to ensure that best practices are implemented. It has now been integrated into the Rails core, and with the imminent release of Rails 5, upgrading to this would gain the memory usage benefits of the latest versions of Ruby.
+
+At this time, push notifications to Android are handled by Pushbullet as a workaround - a future project would implement the standard Google Cloud Notifications service to provide better user experience on the staff side.
