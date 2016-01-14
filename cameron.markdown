@@ -2,8 +2,9 @@
 layout: page
 title: "Cameron"
 description: "Relay"
-header-img: "/img/cameron/relay-outer-1900.jpg"
+header-img: "img/cameron/relay-outer-1900.jpg"
 ---
+
 # Bleepr Relay
 The relay is a network device that acts as a bridge between the Bleepr
 devices and a regular TCP/IP network.  The device connects to the network
