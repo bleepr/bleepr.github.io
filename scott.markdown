@@ -33,7 +33,7 @@ restaurants to use it.
 
 # Design and Implementation
 
-## Choosing the Arduino over the mbed
+## Amazing Arduino vs Marvelous mbed
 While we originally started work using the mbed, we realised
 quickly in development that it was not the ideal device for
 our purpose. Using an arduino instead had a couple of
@@ -41,7 +41,7 @@ advantages for us:
 
 * Libraries supported for all connected devices
 * Familiarity with the system/Ease of use
-* Increased number of output pins
+* Increased number of output pins gave greater options in firmware
 * Small form factor bluetooth functionality
 
 This meant we could focus our time on building the bleepr
@@ -77,7 +77,16 @@ use the system (which should be done when they receive the
 
 
 
-## Bluetooth to Pi
+## Bleepr Control to Major Pi
+The **bleepr** has a a self-centered view of the world. It has no knowledge of
+rest of the system including any other **bleepr** device. The only interaction
+the **bleepr** has is sensing a user's input, and sending out commands via BLE.
+A **bleepr** does not need any input to be paired, as this is done automatically
+by the relay.
+
+We decided to use this method as it allowed the **bleepr** system to be modular and easily expandable.
+
+
 The Bluetooth Low Energy (BLE) communication between the **bleepr** and the **Pi
 Relay** for the prototype is quite simple. In fact, there are only 5 commands
 sent from **bleepr** to Pi!
@@ -92,22 +101,13 @@ data that has been sent back. After a certain amount of time with no response,
 the **bleepr** can display an "action failed" notice and continue back to whatever
 state it was in before.
 
-## Place in the System
-The **bleepr** has a a self-centered view of the world. It has no knowledge of
-rest of the system including any other **bleepr** device. The only interaction
-the **bleepr** has is sensing a user's input, and sending out commands via BLE.
-A **bleepr** does not need any input to be paired, as this is done automatically
-by the relay.
-
-We decided to use this method as it allowed the **bleepr** system to be modular and easily expandable.
-
 ## Code Structure
 The Arduino operates with a single thread, which presented us
 with some problems when we wanted to do concurrent tasks, such
 as animating the screen while communicating up to the Pi.
 
 As animation requires timing, the most straightforward method
-would e to use the built in *delay()* function. However, this
+would be to use the built in *delay()* function. However, this
 blocks any other processes on the device so I had to build
 something new.
 
@@ -126,7 +126,9 @@ will be read immediately.
 
 [video of card scan]
 
-## Song name
+This groundwork for the system is easily expandable (to the limit of the Arduino's memory) so in the future, more options can be added easily.
+
+## Making Bleepr Your Own
 
 *video to go here*
 
