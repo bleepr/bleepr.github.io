@@ -40,7 +40,7 @@ For the duration of this project, we assumed the following roles:
 
 * **Craig:** Backend web service implementation
 * **Scott:** Hardware design and Firmware implementation
-* **Theo:** Hardware design and implementation
+* **Theo:** Hardware design and construction
 * **Cameron:** Relay development - Raspberry Pi handling communications between Bleepr units and the web service
 * **Nantas:** Management web application development and 3D printed case
 * **Matthew:** Android application development
