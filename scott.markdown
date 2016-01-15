@@ -90,8 +90,8 @@ by the relay.
 We decided to use this method as it allowed the bleepr system to be modular and easily expandable.
 
 
-The Bluetooth Low Energy (BLE) communication between the bleepr and the **Pi
-Relay** for the prototype is quite simple. In fact, there are only 5 commands
+The Bluetooth Low Energy (BLE) communication between the bleepr and the Pi
+Relay for the prototype is quite simple. In fact, there are only 5 commands
 sent from bleepr to Pi!
 
 All commands follow a similar template; some action from the user is
