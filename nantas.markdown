@@ -217,15 +217,16 @@ design standards website.
 
 # Bleepr Design
 
-With the fantastic help of Sandy Enoch, a PhD student at the School of
-Informatics, for the first time SLIP had one of the teams using 3D printing
-technology to create the casing of the Bleepr and the relay. The design was done
-entirely using a student version of the popular CAD software SolidWorks and
-focused on creating a good looking tool that consumers would have enjoyed using
-without being a distraction during their meals. Moreover a lot of effort was
-spent coming up with a way to hide all the screws so that the boxes would look
-as professional as possible. The results was a pleasant looking and praised by
-the members of group and the participants of the survey.
+With the fantastic help of Sandy Enoch (@redroboticsco on Twitter), a PhD
+student at the School of Informatics, for the first time SLIP had one of the
+teams using 3D printing technology to create the casing of the Bleepr and the
+relay. The design was done entirely using a student version of the popular CAD
+software SolidWorks and focused on creating a good looking tool that consumers
+would have enjoyed using without being a distraction during their meals.
+Moreover a lot of effort was spent coming up with a way to hide all the screws
+so that the boxes would look as professional as possible. The results was a
+pleasant looking and praised by the members of group and the participants of the
+survey.
 
 ## Relay box 
 
@@ -254,3 +255,11 @@ The final product:
 ![bleep2](/img/nantas/bleep2.png)
 ![bleep3](/img/nantas/bleep3.png)
 
+# References
+
+* Flask: http://flask.pocoo.org/
+* flask-login: https://flask-login.readthedocs.org/en/latest/
+* Numpy: http://www.numpy.org/
+* Matplotlib: http://matplotlib.org/
+* Gaussian functions: https://en.wikipedia.org/wiki/Gaussian_function
+* Linear regression: http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
