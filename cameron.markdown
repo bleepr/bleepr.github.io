@@ -42,6 +42,9 @@ adapter.
 
 Supervisord is used to manage all the processes running on the device - It
 starts them automatically on boot and handles restarting processes if any fail.
+Alternatively we could have used Systemd init scripts however Supervisord
+abstracts this into a very simple set of configuration files therefore reducing
+complexity and allowing faster development.
 
 The main software stack is built up with three components.  The "relay" program
 handles connecting to and exchanging messages to and from the bleepr devices.
@@ -51,18 +54,30 @@ The "socket server" listens on the Websocket and receives messages addressed to
 each bleepr device the devices are addressed by the MAC address of the bluetooth
 adapter.  These messages are stored in a Redis key-value store which is then
 read by the relay process which forwards the message on to its destination
-device.
+device.  Messages are indexed in Redis using the device's MAC address as the
+key, this is used to identify which device the message should be delivered to.
 
 A Redis server sits between these two acting as a key value store to allow
 messages to be forwarded asynchronously between the socket and the Bleepr
-device.
+device.  Redis is an in memory key value store and was chosen as it supports
+a very simple publish/subscribe model where callbacks can be used to execute
+code when the value in Redis changes.  Using a single program which had a thread
+that listened on the socket and passed messages to the device handling threads
+was also attempted but abandoned as this drastically increased complexity and
+made listening asynchronously for socket messages difficult.
 
-The relay is written in Python using the pygatt library which provides a simple
+The relay is written in Python 2.7 using the pygatt library which provides a simple
 interface between Python and "gatttool" which is the Linux command line utility
 for communicating with Bluetooth devices using the Generic Attribute Protocol
 (GATT). I had to manually override the connect() method provided by this
 library to allow me to specify the "LE Address Type" argument as the default of
-"public" is incompatible with the hardware we are using.
+"public" is incompatible with the hardware we are using.  Python in general was
+used due to my extensive knowledge of it and the relative simplicity for
+functions such as multithreading and socket connections as well as the huge
+selection of libraries available.  Version 2.7 in particular was used due to the
+fact that Python 2 and 3 are incompatible with each other and the pygatt library
+only supports Python 2.  Python 2.7 is the newest version of Python 2 and is
+still widely used.
 
 The software is entirely asynchronous - It uses GATT Notifications so that when
 a Bleepr device sends a message, a callback is called on the relay.  This is
@@ -87,7 +102,7 @@ The original design involved scanning for nearby Bleepr devices continuously
 and connecting to them automatically however we found that due to a limitation
 with the Bluetooth hardware we are unable to scan while remaining connected
 to devices.  Therefore we implemented a system where periodically the relay
-would disconnect, rescan for devices and then reconnect, a processs that only
+would disconnect, rescan for devices and then reconnect, a process that only
 took a couple of seconds.  However, this was found to behave poorly with
 the asynchronous nature of the GATT notifications, therefore this functionality
 was removed so the relays now need to be manually instructed to scan for
@@ -130,3 +145,11 @@ the relay could be modified with additional power regulation circuitry to allow
 it to be powered from a standard IEEE 802.3af PoE capable network.  This would
 need to be able to step the voltage down from at least 48v to the 5v required
 by the relay.
+
+### Remote configuration of relays
+Currently the configuration for each relay is stored locally on the device. In a
+large deployment it could be undesirable to need to manually change
+configuration files stored on multiple devices located around a building
+(potentially in inaccessible location such as inside drop ceilings).  Therefore
+the relays could be modified to allow their configuration to be changed through
+and API that could be integrated into the web interface for the Bleepr system.
