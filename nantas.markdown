@@ -23,6 +23,7 @@ for all the interfaces together with Craig.
 ## Specifications
 The purpose of my role was mostly to build the web front-end for the members of
 the staff of the restaurant. The system needed to:
+
 * support multiple users and multiple typologies of users (that is,
   owners/admins and standard staff). That is:
   - provide the ability to add admins and standard users
@@ -69,12 +70,23 @@ features meant that most of the work could then just be creating a clean
 interface for user management without having to worry about writing up the
 functionality from scratch.
 
-Python was also chosen because of it remarkably broad selection of
+Python was also chosen because of its remarkably broad selection of
 state-of-the-art scientific libraries. In particular, many widely used machine
-learning and data analysis libraries were available to both Python 2 and 3. We
-based the entire data pipeline on `numpy`, the standard numerical Python
-library, and we used the `matplotlib` library to generate all the necessary
-images and graphs.
+learning and data analysis libraries were already available to use for both
+Python 2 and Python 3, giving us the ability to choose even the language
+version. We based the entire data pipeline on `numpy`, the standard numerical
+Python library, and we used the `matplotlib` library to generate all the
+necessary images and graphs.
+
+### Design of the website
+
+![Design diagram](/img/nantas/diag.png)
+
+#### Login
+
+Stuff about login
+
+#### Dashboard
 
 The main page of the portal was designed to show the staff the situation of the
 restaurant at the time of use. To provide a quick reference to the user we
@@ -86,9 +98,17 @@ modify the global API to allow the Android app to use the same information if
 needed. To make it easy for the Android app, we also provided an explicit end
 point where to download the map and the full visual status map.
 
-Additionally, all the data is exportable in a neat CSV file that can then be
-imported in spreadsheet tool such as LibreOffice Calc, Excel or other data
-analysis and visualisation tools.
+#### Analytics
+
+Stuff about analytics.
+
+#### Settings
+
+Additionally, a tool to format and export all the data was added so that users
+could import a simple CSV file in spreadsheet tool such as LibreOffice Calc,
+Excel or other data analysis or visualisation tools.
+
+The 
 
 ## Evaluation
 How did the system fare? Could had it been better?
