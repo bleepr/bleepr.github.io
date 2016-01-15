@@ -2,7 +2,7 @@
 layout: page
 title: "Scott"
 description: "Chief Executive Firmware Engineer/Vice President Communications"
-header-img: "img/post-bg-03.jpg"
+header-img: "img/animatedscreen.jpg"
 ---
 
 
@@ -51,8 +51,12 @@ any visitor to the restaurant. As a result of this we wanted to make sure the
 interface was as clean and simple as possible.
 
 The menu design was first built early on and was kept throughout the project. We
-have a main "idle" screen which is used when there is no customer at the table,
-and an options screen
+have a main animated "idle" screen which is used when there is no customer at the table,
+and an options screen to show anyone at the table available
+actions of the bleepr.
+
+[menu screen]
+[animated screen]
 
 ## Bluetooth to Pi
 The Bluetooth Low Energy (BLE) communication between the **bleepr** and the **Pi
