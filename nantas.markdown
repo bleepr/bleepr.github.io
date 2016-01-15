@@ -62,14 +62,6 @@ framework, Django, because of the included Object Relational Mapping (ORM) and
 its general lack of flexibility. Since most of the work was done in a separated
 back-end, using a simple ans small framework was definitely a sound choice.
 
-User management is usually a feature that is very easy to get wrong when
-building a website, so we decided to employ a widely used industry Flask plugin
-called `flask-login` to provide sessions management to the portal. With this not
-only we bootstrapped that feature relatively quickly, but relying on well tested
-features meant that most of the work could then just be creating a clean
-interface for user management without having to worry about writing up the
-functionality from scratch.
-
 Python was also chosen because of its remarkably broad selection of
 state-of-the-art scientific libraries. In particular, many widely used machine
 learning and data analysis libraries were already available to use for both
@@ -78,13 +70,23 @@ version. We based the entire data pipeline on `numpy`, the standard numerical
 Python library, and we used the `matplotlib` library to generate all the
 necessary images and graphs.
 
-### Design of the website
+The interaction with the RESTful API was done using the `request` library for communication, GET/PUT/DELETE requests and pinging, and the `json` library for the formatting and parsing of the API. 
+
+### Website design
 
 ![Design diagram](/img/nantas/diag.png)
 
+
+
 #### Login
 
-Stuff about login
+User management is usually a feature that is very easy to get wrong when
+building a website, so we decided to employ a widely used industry Flask plugin
+called `flask-login` to provide sessions management to the portal. With this not
+only we bootstrapped that feature relatively quickly, but relying on well tested
+features meant that most of the work ended up being about understanding and using the
+interface for user management without having to worry about writing up the
+functionality from scratch. The addition of users was done using JSON 
 
 #### Dashboard
 
