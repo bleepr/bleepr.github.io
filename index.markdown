@@ -17,6 +17,8 @@ a customer has to provide the restaurant with the number of the table they are s
 and tracking the association of order to table can hinder the ability of service staff to perform their jobs. Furthermore,
 the customer receives very little feedback on the state of their order after purchase, and this can create the perception of poor service.
 
+![Block diagram](/img/nantas/diag.png)
+
 Our system solves these issues by providing an on-table device that tracks individual customers across visits through the use of
 RFID technology. Our device provides customers with a means to track the status of their order, and request assistance from service staff,
 as well as providing restaurant staff with an automated method of tracking tables and their associated orders, and providing restaurant
