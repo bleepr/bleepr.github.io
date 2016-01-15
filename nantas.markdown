@@ -150,14 +150,22 @@ For the demo we provided the following information:
   useful to quickly spot seasonal performance issues or the overall growth of
   the service. ![plots](/img/nantas/plots.png)
 * Predicted happiness rating and user feedback trends. Extremely useful to get
-  immediate feedback regarding changes and possible trends.
+  immediate feedback regarding changes and possible trends. The prediction was
+  done by training a linear regressor recursively by splitting a month worth of
+  feedback data in training and target sets. This allowed to get a good estimate
+  roughly based on the gradient of the last few points in the dataset.
   ![happiness](/img/nantas/happiness.png)
   
 #### Settings
 
-Additionally, a tool to format and export all the data was added so that users
-could import a simple CSV file in spreadsheet tool such as LibreOffice Calc,
-Excel or other data analysis or visualisation tools.
+To manage all the configuration of both the server data and the frontend, we
+built a settings page and made it accessible only by the admin users. We added
+functionality such as user management (addition, deletion, permission
+management), Bleeprs configuration (MAC addresses, assigned tables) and table
+configuration (as described in the dashboard section). Additionally we added a
+tool to format and export all the data so that users could import a simple CSV
+file in spreadsheet tool such as LibreOffice Calc, Excel or other data analysis
+or visualisation tools.
 
 
 ## Evaluation
