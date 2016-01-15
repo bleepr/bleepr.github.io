@@ -17,7 +17,7 @@ a customer has to provide the restaurant with the number of the table they are s
 and tracking the association of order to table can hinder the ability of service staff to perform their jobs. Furthermore,
 the customer receives very little feedback on the state of their order after purchase, and this can create the perception of poor service.
 
-![Block diagram](/img/nantas/diag.png)
+![Block diagram](/img/nantas/block.png)
 
 Our system solves these issues by providing an on-table device that tracks individual customers across visits through the use of
 RFID technology. Our device provides customers with a means to track the status of their order, and request assistance from service staff,
@@ -42,7 +42,7 @@ For the duration of this project, we assumed the following roles:
 * **Scott:** Hardware design and Firmware implementation
 * **Theo:** Hardware design and implementation
 * **Cameron:** Relay development - Raspberry Pi handling communications between Bleepr units and the web service
-* **Nantas:** Case design and 3D Printing; Management web application development
+* **Nantas:** Management web application development and 3D printed case
 * **Matthew:** Android application development
 
 <hr>
