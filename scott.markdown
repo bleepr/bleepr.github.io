@@ -20,13 +20,13 @@ and bringing each of our components together into a revolutionary
 culinary experience.
 
 # Requirements
-From the start we knew there were a few major keys for success:
+From the start we knew there were a few major keys for success on the firmware side:
 
 * **Communication to the Pi:** The bleepr should be able to send
 data back to the rest of the system.
 * **Clear interface for the user:** The bleepr should be able to
-be able to used by anyone if it wants to continue the journey to
-more success
+be able to used by anyone if it wants to **continue the journey to
+more success**
 * **Customisability:** The bleepr will need to be customisable
 in terms of colour schemes (and bleeps!) if we want different
 restaurants to use it.
@@ -41,6 +41,8 @@ advantages for us:
 
 * Libraries supported for all connected devices
 * Familiarity with the system/Ease of use
+* Increased number of output pins
+* Small form factor bluetooth functionality
 
 This meant we could focus our time on building the bleepr
 functionality, rather than porting libraries.
@@ -50,13 +52,30 @@ An extremely important part of the **bleepr** is making sure that it is easy to 
 any visitor to the restaurant. As a result of this we wanted to make sure the
 interface was as clean and simple as possible.
 
+As discussed in the hardware section, a button system was chosen
+due to it being cheaper and easier to implement but we did run
+into an interesting interface issue with this. An
+unexpected familiarity with touch screens left of a lot of users bashing the screen with their fingers before trying the
+buttons. This may have been an anomaly, due to our sample set
+being mostly technically minded people but still something we
+considered for bulding into future devices.
+
+The ILL9341 library for the screen allowed us to create simple
+shapes, which explains the menu's minimalist design.
+
 The menu design was first built early on and was kept throughout the project. We
 have a main animated "idle" screen which is used when there is no customer at the table,
-and an options screen to show anyone at the table available
+and a simple options screen to show anyone at the table available
 actions of the bleepr.
 
 [menu screen]
 [animated screen]
+
+The systems are clear for most users who are informed on how to
+use the system (which should be done when they receive the
+  card).
+
+
 
 ## Bluetooth to Pi
 The Bluetooth Low Energy (BLE) communication between the **bleepr** and the **Pi
@@ -78,8 +97,9 @@ The **bleepr** has a a self-centered view of the world. It has no knowledge of
 rest of the system including any other **bleepr** device. The only interaction
 the **bleepr** has is sensing a user's input, and sending out commands via BLE.
 A **bleepr** does not need any input to be paired, as this is done automatically
-by the relay. We decided to use this method as it allowed the **bleepr** system
-to be modular and easily expandable.
+by the relay.
+
+We decided to use this method as it allowed the **bleepr** system to be modular and easily expandable.
 
 ## Code Structure
 The Arduino operates with a single thread, which presented us
