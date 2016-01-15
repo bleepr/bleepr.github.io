@@ -177,7 +177,6 @@ able to use the service.
 Here's some screenshots that show the adaptability of the pages:
 
 ![first](/img/nantas/screen_one.png)
-![second](/img/nantas/screen_two.png)
 
 To evaluate the user experience we created a survey and collected 21 responses,
 18 of which categorized as moderate consumers in restaurants and 3 staff members
