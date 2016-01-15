@@ -167,10 +167,21 @@ tool to format and export all the data so that users could import a simple CSV
 file in spreadsheet tool such as LibreOffice Calc, Excel or other data analysis
 or visualisation tools.
 
-
 ## Evaluation
 
-To evaluate the system we created a survey and collected 21 responses, 18 of which categorized as moderate consumers in restaurants and 3 staff members of restaurant.
+The system was completely responsive thanks to the `bootstrap` library. The
+system can handle a continuous series of resolutions while still looking
+excellent to the user, allowing waiters with tablets or smartphones to always be
+able to use the service.
+
+Here's some screenshots that show the adaptability of the pages:
+
+![first](/img/nantas/screen_one.png)
+![second](/img/nantas/screen_two.png)
+
+To evaluate the user experience we created a survey and collected 21 responses,
+18 of which categorized as moderate consumers in restaurants and 3 staff members
+of restaurant.
 
 The overall system was rated between good and excellent with all the
 participants rating over 4/5 in originality and user experience. The design of
@@ -195,25 +206,52 @@ The web front end was functional and completely up to the requirements by the
 time of the demonstration. The data providers and visualisers gave a reasonable
 idea of both the status of the restaurant and possible data-driven trends, and
 the interface to manage the Bleeprs got actually used to perform the demo. Given
-the effort spent in clearly splitting the module, the design ended up being
+the effort spent in splitting the module, the design ended up being
 clearly modular and usable in professional settings. Because of lack of User
 Experience training, adjustment to the visual interface and a visual re-design
 are still clearly needed, but the project has been definitely satisfactory and
 fully completed according to the initial specifications.
 
-Would have been nice to have a web tool to "draw" the map instead of using text data.
+A nice addition to the frontend would have been to have a web tool to "draw" the
+map instead of using text data, while also providing a more beautiful and up web
+design standards website.
 
 # Bleepr Design
 
-## Design choices
+With the fantastic help of Sandy Enoch, a PhD student at the School of
+Informatics, for the first time SLIP had one of the teams using 3D printing
+technology to create the casing of the Bleepr and the relay. The design was done
+entirely using a student version of the popular CAD software SolidWorks and
+focused on creating a good looking tool that consumers would have enjoyed using
+without being a distraction during their meals. Moreover a lot of effort was
+spent coming up with a way to hide all the screws so that the boxes would look
+as professional as possible. The results was a pleasant looking and praised by
+the members of group and the participants of the survey.
 
-We needed a 3d printed box. Then another. 'cause it was cool. Turns out making
-it pretty was pretty hard.
+## Relay box 
 
-## Technical details
+Here's some initial renders of the relay box:
 
-3d printer + material details. Internal refinements. Cool stuff.
+![renders](/img/nantas/rendone.png)
 
-## End product
+The 3d-printed product looked like this:
 
-All the photos.
+![rend](/img/nantas/rendtwo.png)
+
+The second and final version of the relay box was made sturdier and the logo on
+the top was made more clear:
+
+![redd](/img/nantas/rendthree.png)
+
+## Bleepr 
+
+Some initial rendering:
+
+![bleep](/img/nantas/bleep.png)
+![bleep](/img/nantas/bleep01.png)
+![bleep](/img/nantas/bleep02.png)
+The final product:
+
+![bleep2](/img/nantas/bleep2.png)
+![bleep3](/img/nantas/bleep3.png)
+
