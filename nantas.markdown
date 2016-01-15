@@ -169,12 +169,16 @@ or visualisation tools.
 
 ## Evaluation
 
-The system was completely responsive thanks to the `bootstrap` library. The
+The main python modules were continuously tested with using unit tests;
+additionally I spent quite a lot of time testing Craig's API to get rid of the
+visible bugs. The `DataGenerator` module automatically generates fake data and
+compares the results of the responses of the server with known good results. All
+the fake data is then removed and the database become functional again for use.
+
+The web frontend was completely responsive thanks to the `bootstrap` library. The
 system can handle a continuous series of resolutions while still looking
 excellent to the user, allowing waiters with tablets or smartphones to always be
 able to use the service.
-
-Here's some screenshots that show the adaptability of the pages:
 
 ![first](/img/nantas/screen_one.png)
 
@@ -204,12 +208,19 @@ environmental data such as weather, city events, tourism data and so on.
 The web front end was functional and completely up to the requirements by the
 time of the demonstration. The data providers and visualisers gave a reasonable
 idea of both the status of the restaurant and possible data-driven trends, and
-the interface to manage the Bleeprs got actually used to perform the demo. Given
-the effort spent in splitting the module, the design ended up being
-clearly modular and usable in professional settings. Because of lack of User
-Experience training, adjustment to the visual interface and a visual re-design
-are still clearly needed, but the project has been definitely satisfactory and
-fully completed according to the initial specifications.
+the interface to manage the Bleeprs got actually used to perform the demo.
+Because of lack of User Experience training, adjustment to the visual interface
+and a visual re-design are still clearly needed, but the project has been
+definitely satisfactory and fully completed according to the initial
+specifications.
+
+The system is fully and easily expandable both in terms of analytics (it's as
+easy as adding a method to the `renderer` module) and modules are fully
+decoupled so that they can be extracted and used separately. For instance, it is
+quite straightforward to take the API parser module and the `Data*` modules to
+locally analyse the entire of the data. The effort spent in splitting the
+module, the design ended up being clearly modular and usable in professional
+settings.
 
 A nice addition to the frontend would have been to have a web tool to "draw" the
 map instead of using text data, while also providing a more beautiful and up web
