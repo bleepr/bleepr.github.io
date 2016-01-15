@@ -70,12 +70,13 @@ version. We based the entire data pipeline on `numpy`, the standard numerical
 Python library, and we used the `matplotlib` library to generate all the
 necessary images and graphs.
 
-The interaction with the RESTful API was done using the `request` library for communication, GET/PUT/DELETE requests and pinging, and the `json` library for the formatting and parsing of the API. 
+The interaction with the RESTful API was done using the `request` library for
+communication, GET/PUT/DELETE requests and pinging, and the `json` library for
+the formatting and parsing of the API.
 
 ### Website design
 
 ![Design diagram](/img/nantas/diag.png)
-
 
 
 #### Login
@@ -84,13 +85,14 @@ User management is usually a feature that is very easy to get wrong when
 building a website, so we decided to employ a widely used industry Flask plugin
 called `flask-login` to provide sessions management to the portal. With this not
 only we bootstrapped that feature relatively quickly, but relying on well tested
-features meant that most of the work ended up being about understanding and using the
-interface for user management without having to worry about writing up the
-functionality from scratch. The addition of users was done using JSON 
+code meant that most of the work ended up being about understanding and using
+the interface for user management without having to worry about writing up the
+functionality from scratch. All the data was securely encoded and transmitted
+using the API.
 
 #### Dashboard
 
-The main page of the portal was designed to show the staff the situation of the
+The main page of the portal was designed to show the staff the state of the
 restaurant at the time of use. To provide a quick reference to the user we
 decided to place a map of the restaurant in the dashboard; this map would then
 show information such as booked and used tables, active Bleeprs and
@@ -102,7 +104,43 @@ point where to download the map and the full visual status map.
 
 #### Analytics
 
-Stuff about analytics.
+The Bleepr system was designed so that the experience of the restaurant could
+also improve over time. For this to happen the system needed to provide an
+insight in the "performances" of the service and some feedback from the user. We
+built the system to log information about bookings and orders, we logged arrival
+and leaving times and we provided the users a way to give a rating of the
+experience at the end of their meals. This allowed the creation of a
+continuously updating page where all this data would be graphed and analysed to
+provide useful information to the staff. The `DataProvider` module was created
+to provide an interface to download and parse the data from the API and a
+`DataAnalyser` module was created to analyse and provide graphs and tables to
+the website. The design was completely modular and based on standard object
+oriented programming (OOP) practises so that adding new data or new insights
+would be pretty much automatic.
+
+For the demo we provided the following information:
+
+* A heatmap of the restaurant based on usage. This would allow the staff to see
+  the "hot zones" of the restaurant and optimise both personnel and tables
+  locations. Because of the sparsity of the data it wasn't possible to implement
+  this feature in a straightforward way: a useful heatmap is hard to create if
+  the dimension of the data is not really related to the space in which the
+  heatmap has to be shown. You can visualise this problem by imagining a 3d
+  histogram where the bars start at the center of the tables in the dashboard
+  map. To instead fill the entire map with a 2D heatmap and solve the problem we
+  instead fit 2D gaussian distributions using the shape of the tables to modify
+  the two sizes of the gaussians and the amount of uses of the tables to change
+  the relative intensity of the table gaussian. Doing this iteratively for each
+  table ended up working very well:
+  ![heatmap](/img/nantas/heatmap.png)
+* A few graphs showing booking and orders trends over previous weeks and months
+  (all configurable using standard INI files) useful to quickly spot
+  seasonal performance issues or the overall growth of the service.
+  ![plots](/img/nantas/plots.png)
+* Predicted happiness rating and user feedback trends. Extremely useful to get
+  immediate feedback regarding changes and possible trends.
+  ![happiness](/img/nantas/happiness.png)
+  
 
 #### Settings
 
