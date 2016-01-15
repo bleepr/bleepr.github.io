@@ -16,9 +16,9 @@ comprehensive and seamless in its execution. To satisfy such requirements we
 created two kinds of user interfaces: the Bleepr box and the application
 front-ends.
 
-I was personally responsible for the creation of the web interface for the staff,
-the design of some useful data analytic and the testing of the server API for
-all the interfaces together with Craig.
+I was personally responsible for the creation of the web interface for the
+staff, the design of some useful data analytic and the testing of the server API
+for all the interfaces together with Craig.
 
 ## Specifications
 The purpose of my role was mostly to build the web front-end for the members of
@@ -37,40 +37,44 @@ Additionally the system needed to display some of the collected information
 about the restaurant, to allow the staff to gain knowledge about long-term
 trends and to get some insights on possible issues in the restaurant.
 
-Modularity, expandability, self-hosting
+Finally since we recognised that there are a huge variety of services that offer
+some form of restaurant services, the architecture and the design needed to
+focus on modularity, expandability and possible self-hosting.
 
 ## Design
 Choosing the tools to build a system that would satisfy all the requirements was
-not the easiest task. Craig to build the API using Ruby on Rails, but the
-back-end environment had to be split from the front-end for several reasons, so
-there wasn't any need to have to deal with the Ruby environment. Because of the
-many data science libraries and web tools available to Python, we decided to
-build the entire front-end using tools available in the Python environment. As a
-bonus Cameron decided to build the relay framework with Python as well, which
-meant that we could share code for interfacing with the RESTful API.
+not the easiest task. Craig decided to use Ruby on Rails to make the API, but
+there wasn't any real need to have to deal with the Ruby environment for the
+front-end, and while it is true that adding an another ecosystem would increase
+the bus-factor risks and maintenance costs, we would have then acquired the
+chance to make the design leaner, more modular and completely dissociated with
+the server code. As we in fact expected , after a few design iterations and some
+refactoring the system ended up being quite nice.
 
-After a few design iterations and some refactoring, the system shaped itself
-nicely as shown in the figure below.
+### A Pythonic User Interface
 
-DESIGN FIGURE HERE
-
-The front-end was built using a very popular web microframework written in
+We built the frontend using a very popular web microframework written in
 Python called Flask. Out of the many frameworks available in the python
-environment Flask was chosen for its bootstrapping capabilities, its simplicity
-and the availability of plugins. We excluded using another popular web
+environment Flask was chosen for its bootstrapping capabilities, its simple interface
+and the huge popularity and availability of plugins. We excluded using another popular web
 framework, Django, because of the included Object Relational Mapping (ORM) and
 its general lack of flexibility. Since most of the work was done in a separated
-back-end, using a simple ans small framework was a sound choice.
+back-end, using a simple ans small framework was definitely a sound choice.
 
 User management is usually a feature that is very easy to get wrong when
 building a website, so we decided to employ a widely used industry Flask plugin
-called `flask-login` to provide sessions management to the portal.
+called `flask-login` to provide sessions management to the portal. With this not
+only we bootstrapped that feature relatively quickly, but relying on well tested
+features meant that most of the work could then just be creating a clean
+interface for user management without having to worry about writing up the
+functionality from scratch.
 
-Python is truly an awesome language for data scientists, as some of the most
-used machine learning and data analysis libraries are available to both Python 2
-and 3. We based the entire data pipeline on `numpy`, the standard numerical
-Python library, and we used the `matplotlib` library to generate all the
-necessary images.
+Python was also chosen because of it remarkably broad selection of
+state-of-the-art scientific libraries. In particular, many widely used machine
+learning and data analysis libraries were available to both Python 2 and 3. We
+based the entire data pipeline on `numpy`, the standard numerical Python
+library, and we used the `matplotlib` library to generate all the necessary
+images and graphs.
 
 The main page of the portal was designed to show the staff the situation of the
 restaurant at the time of use. To provide a quick reference to the user we
@@ -83,7 +87,8 @@ needed. To make it easy for the Android app, we also provided an explicit end
 point where to download the map and the full visual status map.
 
 Additionally, all the data is exportable in a neat CSV file that can then be
-imported in spreadsheet tool such as LibreOffice Calc.
+imported in spreadsheet tool such as LibreOffice Calc, Excel or other data
+analysis and visualisation tools.
 
 ## Evaluation
 How did the system fare? Could had it been better?
