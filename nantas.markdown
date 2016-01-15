@@ -169,15 +169,25 @@ or visualisation tools.
 
 
 ## Evaluation
-How did the system fare? Could had it been better?
 
-In terms of data analysis, it is clear that the system is comprehensive and
-robust in terms of what's visualised, but much of the power of machine learning
-has not been used yet. For instance using only the gradient of the last few data
-points to provide estimates of future values greatly limits the prediction's
-accuracy. A better way to use the data would be to construct a model not only
-based on previous data, but also on environmental data such as weather, city
-events, tourism data and so on.
+To evaluate the system we created a survey and collected 21 responses, 18 of which categorized as moderate consumers in restaurants and 3 staff members of restaurant.
+
+The overall system was rated between good and excellent with all the
+participants rating over 4/5 in originality and user experience. The design of
+the website was praised for the responsiveness (since it was shown on a 13"
+laptop and a standard 5" smartphone screen). 11 of the participants said that
+the design was good looking, while the remaining 10 would have liked the website
+to look "prettier"; of the 3 staff members 2 praised the usability and
+quickness. Overall all the users showed a clear interest in trying the system
+live, with the 3 restaurants staff members saying that "it would probably
+benefit both them and their costumers". It is although unclear whether they
+would be happy to self-host the service.
+
+In terms of data analysis, the system seemed comprehensive and robust in terms
+of what is visualised to the staff, but 1 staff member asked for additional
+analysis including most ordered food with respect to the season and times of the
+day. Additional analytics could be provided by coupling the Bleepr data with
+environmental data such as weather, city events, tourism data and so on.
 
 ## Conclusions
 
@@ -188,7 +198,8 @@ the interface to manage the Bleeprs got actually used to perform the demo. Given
 the effort spent in clearly splitting the module, the design ended up being
 clearly modular and usable in professional settings. Because of lack of User
 Experience training, adjustment to the visual interface and a visual re-design
-are still clearly needed, but the project has been definitely satisfactory.
+are still clearly needed, but the project has been definitely satisfactory and
+fully completed according to the initial specifications.
 
 Would have been nice to have a web tool to "draw" the map instead of using text data.
 
