@@ -15,7 +15,7 @@ to the network and from the network to devices.
 ## Hardware
 ![Inside of Relay showing Rasberry Pi and USB adapter](/img/cameron/relay-usb-640.jpg)
 
-The Bleepr relay is based around a Rasperry Pi 2 in a custom 3D printed
+The Bleepr relay is based around a Raspberry Pi 2 in a custom 3D printed
 case.  This has a 900MHz Quad Core ARM Cortex-A7 CPU with 1gb of RAM and is
 equipped with a MicroSD card which holds the software as well as
 configuration files on a FAT32 formatted partition.  This means that the
@@ -48,7 +48,7 @@ complexity and allowing faster development.
 
 The main software stack is built up with three components.  The "relay" program
 handles connecting to and exchanging messages to and from the bleepr devices.
-It also sends messages that it recieves from the devices out to the RESTful API.
+It also sends messages that it receives from the devices out to the RESTful API.
 
 The "socket server" listens on the Websocket and receives messages addressed to
 each bleepr device the devices are addressed by the MAC address of the bluetooth
