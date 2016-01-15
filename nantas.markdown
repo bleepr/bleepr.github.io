@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "Nantas"
-description: "1% of the world population owns over 50% of the wealth"
-header-img: "img/post-bg-02.jpg"
+description: "Management portal, data analysis and 3D printing"
+header-img: "img/nantas/bg.png"
 ---
 
 # Web front-end
@@ -93,14 +93,26 @@ using the API.
 #### Dashboard
 
 The main page of the portal was designed to show the staff the state of the
-restaurant at the time of use. To provide a quick reference to the user we
+restaurant at the time of use, and to provide a quick reference to the user we
 decided to place a map of the restaurant in the dashboard; this map would then
-show information such as booked and used tables, active Bleeprs and
-other information relevant to the tables. This required to add an interface to
-allow the staff to manage tables and to interactively build the map, and to
-modify the global API to allow the Android app to use the same information if
-needed. To make it easy for the Android app, we also provided an explicit end
-point where to download the map and the full visual status map.
+show information such as booked and used tables, active Bleeprs and other
+relevant data regarding orders tables. This required to add an interface to
+allow the staff to manage tables and to interactively build the map. To do so we
+added an API endpoint that would store information about position and size of
+tables with respect to the size of the restaurant. In computer vision it's
+common practice to use a point map to do geometrical modelling of flat parts.
+![flats](/img/nantas/flats.png) We used the same idea to allow the user to
+specify the geometry using text files. To make it easy for the Android app and
+other user interfaces, we also provided an explicit end point where to download
+the map and the filled visual status map.
+
+Additionally we also decided to provide more information by colouring the tables
+depending on their status (booked, full, empty) and dynamically loading the new
+map every minute by reloading the page. All of this was done in real time, but
+the download, data parsing and map creation didn't significantly affect the
+loading of the dashboard.
+
+![flats](/img/nantas/maps.png)
 
 #### Analytics
 
@@ -134,21 +146,19 @@ For the demo we provided the following information:
   table ended up working very well:
   ![heatmap](/img/nantas/heatmap.png)
 * A few graphs showing booking and orders trends over previous weeks and months
-  (all configurable using standard INI files) useful to quickly spot
-  seasonal performance issues or the overall growth of the service.
-  ![plots](/img/nantas/plots.png)
+  (all configurable by uploading standard INI files in the `settings` page)
+  useful to quickly spot seasonal performance issues or the overall growth of
+  the service. ![plots](/img/nantas/plots.png)
 * Predicted happiness rating and user feedback trends. Extremely useful to get
   immediate feedback regarding changes and possible trends.
   ![happiness](/img/nantas/happiness.png)
   
-
 #### Settings
 
 Additionally, a tool to format and export all the data was added so that users
 could import a simple CSV file in spreadsheet tool such as LibreOffice Calc,
 Excel or other data analysis or visualisation tools.
 
-The 
 
 ## Evaluation
 How did the system fare? Could had it been better?
