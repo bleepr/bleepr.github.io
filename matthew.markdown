@@ -2,7 +2,7 @@
 layout: page
 title: "Matthew"
 description: "Android"
-header-img: "img/about-bg.jpg"
+header-img: "img/matt-header.png"
 ---
 ## Introduction
 For our project, we settled upon the idea of a Bleepr, an Internet-of-Things device designed for use in a food service environment.
