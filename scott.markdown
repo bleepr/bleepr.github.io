@@ -2,7 +2,7 @@
 layout: page
 title: "Scott"
 description: "Chief Executive Firmware Engineer/Vice President Communications"
-header-img: "img/animatedscreen.jpg"
+header-img: "img/Scott/animatedscreen.jpg"
 ---
 
 
