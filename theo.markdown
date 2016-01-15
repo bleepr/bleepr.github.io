@@ -16,7 +16,8 @@ When we finished developing the idea for our project, we decided to move to usin
 ## The Hardware
 The Bleepr's hardware is installed on a custom designed and printed PCB, and powered by a rechargeable USB power bank.
 
-[picture of PCB with components installed]
+<img src="/img/theo/pcb-physical.jpg" height="250">
+*Figure 0: PCB*
 
 An Arduino Nano (ATmega328 at 16MHz) is used as the controller for all of the components on the PCB. This allowed us to combine our existing experience programming Arduino-compatible devices with the many open-source libraries that exist for the hardware that we wanted to use for Bleepr.
 
@@ -79,4 +80,7 @@ The HM-10 Bluetooth module we used performed very well. It was extremely easy to
 
 The RGB LED strip was quite a late addition to our design. It is probably the least functional component in the device, however that does not mean it was not added for purely aesthetic reasons. It allowed us to make more intuitive feedback to the user on various events, such as their ID card being accepted or rejected, or order updates. The LED strip itself was simple to integrate into our hardware, running on a single pin serial connection. However it was a great addition to the device, and during informal user testing it was clear that users found the colour notifications an intuitive and pleasing addition to the device. The RGB LED strip would probably be included in the production model unchanged.
 
-## Summary
+## Conclusion
+I am, on the whole, very pleased with how the hardware came together for Bleepr. While there is a lot I'd like to improve about the device, as I wrote above in the evaluation, I'm still pleased with what we were able to achieve. We managed to create a device which looks good, is very functional, and performs well, in a short period of time.
+
+If we were able to develop a more refined version 2 of Bleepr, I believe it would be a compelling device to be used in many restaurant and gastropub settings, and would be a very popular addition. The hardware that I designed and constructed is a demonstration of what is possible for this project, but I believe if we had an increased budget, in terms of both time and money, we could create a much more refined and capable device for the Bleepr system.
