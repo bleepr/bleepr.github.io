@@ -81,6 +81,30 @@ A **bleepr** does not need any input to be paired, as this is done automatically
 by the relay. We decided to use this method as it allowed the **bleepr** system
 to be modular and easily expandable.
 
+## Code Structure
+The Arduino operates with a single thread, which presented us
+with some problems when we wanted to do concurrent tasks, such
+as animating the screen while communicating up to the Pi.
+
+As animation requires timing, the most straightforward method
+would e to use the built in *delay()* function. However, this
+blocks any other processes on the device so I had to build
+something new.
+
+The solution was to build using a hierarchical state machine.
+An outer state machine controls the formal state of the machine, and is changed usually from signals from the sensors. The
+inner state machines are built similarly to the Arduino
+infrastructure, with a setup and loop state with an additional
+close state. This meant that animations could be set up by
+measuring the time since they started playing on the device
+while still being able to perform critical tasks like reading
+sensor input.
+
+The best example of this is on the idle screen, where our most
+complex animation plays. We can scan a card at any time and it
+will be read immediately.
+
+[video of card scan]
 
 ## Song name
 
